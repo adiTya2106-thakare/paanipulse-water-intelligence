@@ -1,0 +1,61 @@
+======================================================================
+PAANIPULSE — READY-TO-COPY TEXT SNIPPETS FOR TECHFEST SUBMISSION FORM
+Techfest 2026–27 Campus to Cloud Hackathon sponsored by AWS
+======================================================================
+
+Use these pre-written, judges-optimized snippets when filling out the 
+submission form on the Techfest portal (techfest.org).
+
+----------------------------------------------------------------------
+1. PROJECT TITLE:
+----------------------------------------------------------------------
+PAANIPULSE (पानीय पल्स)
+
+----------------------------------------------------------------------
+2. TAGLINE:
+----------------------------------------------------------------------
+Know your neighbourhood's water situation before the tap runs dry.
+
+----------------------------------------------------------------------
+3. LIVE PROTOTYPE URL:
+----------------------------------------------------------------------
+https://main.d16h9tm50mzqg3.amplifyapp.com
+
+----------------------------------------------------------------------
+4. GITHUB REPOSITORY URL:
+----------------------------------------------------------------------
+https://github.com/adiTya2106-thakare/paanipulse-water-intelligence
+
+----------------------------------------------------------------------
+5. PROBLEM STATEMENT (SHORT - 60 WORDS):
+----------------------------------------------------------------------
+Over 350 million urban Indian residents face intermittent municipal water rationing (1 to 3 hours daily). When water is delayed or pressure drops, residents panic: is it a building motor pump failure or a municipal ward-wide outage? Today, citizens rely on informal, frantic WhatsApp messages and unverified rumors, leading to booster pump burnouts and unnecessary private water tanker expenses.
+
+----------------------------------------------------------------------
+6. PROPOSED SOLUTION (SHORT - 75 WORDS):
+----------------------------------------------------------------------
+PAANIPULSE is a lightweight, mobile-first civic water intelligence network that organizes voluntary resident observations into transparent, explainable neighbourhood signals. In under 15 seconds, citizens log water condition and pressure. PAANIPULSE compares submissions against a diurnal Neighbourhood Water Fingerprint (Morning, Midday, Evening, Night), calculates an objective 100-point Community Signal Confidence score, and actively flags early disruption anomalies—without requiring expensive, fragile IoT pipe hardware.
+
+----------------------------------------------------------------------
+7. AWS SERVICES USED (AND WHY):
+----------------------------------------------------------------------
+- AWS Amplify Hosting: Edge CDN distribution of our mobile-first React/TypeScript SPA with continuous CI/CD from GitHub.
+- AWS Lambda (Python 3.12): Serverless execution engine for transparent confidence scoring, baseline calculation, and rate-limiting.
+- Amazon DynamoDB: Low-latency NoSQL table (PaanipulseReports) with composite partition and sort keys to eliminate expensive table scans.
+- Amazon API Gateway (HTTP API v2): High-throughput REST API ingress with CORS preflight and burst throttling.
+- Amazon CloudWatch: Real-time operational logs and latency tracking.
+Total Cost: $0.00/month under the AWS Free Tier.
+
+----------------------------------------------------------------------
+8. BHARAT IMPACT (EVALUATION WEIGHT: 30%):
+----------------------------------------------------------------------
+Empowers Indian households, apartment societies (RWAs), and chawl committees to plan domestic chores responsibly, avoid dry pump motor burnout, and prevent private tanker price gouging. Provides downloadable, evidence-based audit report cards that citizens can present to local municipal corporators (MCGM, PMC, BWSSB, DJB) to highlight chronic low-pressure distribution zones.
+
+----------------------------------------------------------------------
+9. INNOVATION & DIFFERENTIATORS (EVALUATION WEIGHT: 25%):
+----------------------------------------------------------------------
+1. Diurnal Neighbourhood Water Fingerprint: Maps historical baseline by diurnal time intervals with honest developing baseline states (<12 reports).
+2. Transparent Community Confidence Meter: 100-point composite formula factoring reporter diversity, recency decay, and neighbour agreement.
+3. Explainable Disruption Early-Warning: Statistically detects >=50% drops below baseline without hallucinating official outages.
+4. Privacy-by-Design: Centroid-level ward mapping with zero private address storage.
+======================================================================
