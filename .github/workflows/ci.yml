@@ -1,0 +1,62 @@
+name: PAANIPULSE CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Backend Tests
+        run: |
+          pip install boto3
+          python -m unittest tests/test_backend.py
+          python -m unittest tests/test_integration.py
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm ci || npm install
+          npm run build
+
+  deploy-aws-if-configured:
+    needs: test-and-verify
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check and Deploy to AWS
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION || 'ap-south-1' }}
+        run: |
+          if [ -n "$AWS_ACCESS_KEY_ID" ]; then
+            pip install boto3
+            python backend/deploy_aws.py
+          else
+            echo "AWS_ACCESS_KEY_ID secret not configured in GitHub Secrets yet. Skipping automated cloud push."
+          fi
