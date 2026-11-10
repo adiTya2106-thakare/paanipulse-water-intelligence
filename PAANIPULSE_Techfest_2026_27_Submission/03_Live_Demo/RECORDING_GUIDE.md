@@ -26,3 +26,4 @@
 1. **OBS Studio (Recommended):** Free, open source screen recorder. Set resolution to 1920x1080, 60fps.
 2. **Clipchamp / CapCut / DaVinci Resolve:** Trim pauses and ensure the video stops at 2:50.
 3. **Audacity:** Remove background mic hiss if recording in a dorm or noisy room.
+

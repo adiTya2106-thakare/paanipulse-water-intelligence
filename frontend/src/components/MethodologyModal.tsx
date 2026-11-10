@@ -116,3 +116,4 @@ export const MethodologyModal: React.FC<MethodologyModalProps> = ({ isOpen, onCl
     </div>
   );
 };
+

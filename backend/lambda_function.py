@@ -381,3 +381,4 @@ def lambda_handler(event: Dict[str, Any], context: Any = None) -> Dict[str, Any]
             "error": "Internal server processing error.",
             "message": "An unexpected error occurred while processing the water intelligence request."
         })
+

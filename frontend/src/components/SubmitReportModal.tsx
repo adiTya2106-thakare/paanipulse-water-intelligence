@@ -269,3 +269,4 @@ export const SubmitReportModal: React.FC<SubmitReportModalProps> = ({
     </div>
   );
 };
+

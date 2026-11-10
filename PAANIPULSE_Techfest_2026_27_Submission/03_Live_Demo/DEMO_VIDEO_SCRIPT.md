@@ -88,3 +88,4 @@ Show the generated **Evidence-Based Locality Report Card** (printable PDF view),
 
 ---
 **Total Duration: 2 Minutes 50 Seconds (Under 3:00 limit).**
+

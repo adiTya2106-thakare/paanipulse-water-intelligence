@@ -134,3 +134,4 @@ export interface ReportCardData {
   active_disruption_warning: DisruptionAlert | null;
   legal_and_methodological_disclaimer: string;
 }
+

@@ -60,3 +60,4 @@
 | Insert Citizen Report | PutItem with unique Sort Key | 10–20 ms | $0.00 |
 | View Filtered Timeline | Query with Limit 50 | 12–25 ms | $0.00 |
 | Table Scans | **Zero Table Scans** | N/A | $0.00 |
+

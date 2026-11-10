@@ -136,6 +136,7 @@ Unlike traditional complaint portals that treat citizen submissions as passive f
 ---
 
 ### 17. Repository & Deliverables
-- **GitHub Repository:** Publicly available with full source code, deployment scripts, and automated test suite.
+- **GitHub Repository:** https://github.com/adiTya2106-thakare/paanipulse-water-intelligence
 - **Live AWS Endpoint:** Amazon API Gateway + Lambda + DynamoDB serverless backend.
 - **Tested Test Suite:** 16 Unit & Algorithm tests + 4 End-to-end Integration tests (100% pass rate).
+

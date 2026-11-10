@@ -129,3 +129,4 @@
 > *“Because PAANIPULSE runs on AWS serverless, scaling from 5 localities to 5,000 localities across India requires zero architectural changes — DynamoDB and Lambda automatically scale on-demand. 
 > Our go-to-market strategy begins with Resident Welfare Associations (RWAs) and apartment society federations. 
 > In the next phase, our Evidence-Based Locality Report cards can be piped into municipal ward portals (MCGM, DJB, BWSSB) via webhooks, giving water engineers real-time visibility into localized tail-end pressure drops without installing costly physical pipe telemetry.”*
+

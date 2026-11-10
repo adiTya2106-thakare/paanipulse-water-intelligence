@@ -181,3 +181,4 @@ export const ConfidenceIndicator: React.FC<ConfidenceIndicatorProps> = ({ confid
 function intToPct(val: number): number {
   return Math.round((val || 0) * 100);
 }
+

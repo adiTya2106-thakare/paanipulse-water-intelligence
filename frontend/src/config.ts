@@ -17,3 +17,4 @@ export function getOrCreateReporterToken(): string {
   }
   return token;
 }
+

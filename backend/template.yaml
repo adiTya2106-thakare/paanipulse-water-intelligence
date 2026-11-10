@@ -133,3 +133,4 @@ Outputs:
   DynamoDBTableName:
     Description: "DynamoDB Table Name"
     Value: !Ref PaanipulseReportsTable
+

@@ -175,3 +175,4 @@ export const WaterStatusCard: React.FC<WaterStatusCardProps> = ({ summary }) => 
     </div>
   );
 };
+

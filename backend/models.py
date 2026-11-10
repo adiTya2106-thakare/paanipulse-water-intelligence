@@ -73,3 +73,4 @@ class WaterReport:
             payload["notes"] = sanitized_notes.strip()
 
         return True, ""
+

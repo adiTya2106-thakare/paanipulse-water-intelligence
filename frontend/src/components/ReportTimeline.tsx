@@ -200,3 +200,4 @@ export const ReportTimeline: React.FC<ReportTimelineProps> = ({ reports, localit
     </div>
   );
 };
+

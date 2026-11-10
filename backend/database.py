@@ -271,3 +271,4 @@ class DatabaseManager:
 
 # Global database manager instance
 db = DatabaseManager()
+

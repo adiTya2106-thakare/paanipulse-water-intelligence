@@ -140,3 +140,4 @@ export const WaterFingerprintCard: React.FC<WaterFingerprintCardProps> = ({ fing
     </div>
   );
 };
+

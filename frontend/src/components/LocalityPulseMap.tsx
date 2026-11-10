@@ -175,3 +175,4 @@ export const LocalityPulseMap: React.FC<LocalityPulseMapProps> = ({
     </div>
   );
 };
+
