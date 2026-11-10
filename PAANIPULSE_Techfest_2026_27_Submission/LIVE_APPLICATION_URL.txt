@@ -1,0 +1,33 @@
+======================================================================
+PAANIPULSE — LIVE APPLICATION & AWS DEPLOYMENT ACCESS
+Techfest 2026–27 Campus to Cloud Hackathon sponsored by AWS
+======================================================================
+
+1. LIVE AWS APPLICATION URL (AMPLIFY HOSTING):
+----------------------------------------------------------------------
+https://main.d16h9tm50mzqg3.amplifyapp.com
+
+Status: Active & Deployed on AWS Amplify Cloud CDN
+Accessible across mobile, tablet, and desktop devices for Demo Day.
+
+
+2. GITHUB SOURCE CODE REPOSITORY:
+----------------------------------------------------------------------
+https://github.com/adiTya2106-thakare/paanipulse-water-intelligence
+
+
+3. AWS CLOUD ARCHITECTURE:
+----------------------------------------------------------------------
+- Hosting & Edge CDN: AWS Amplify Hosting
+- Compute Engine: AWS Lambda (Python 3.12 Serverless)
+- API Gateway: Amazon API Gateway (HTTP API v2)
+- Database: Amazon DynamoDB (Table: PaanipulseReports)
+- Observability: Amazon CloudWatch Log Alarms
+- Free Tier Cost: $0.00 / month
+
+
+4. AUTOMATED TEST VERIFICATION:
+----------------------------------------------------------------------
+20/20 Automated Tests Passed (100% Pass Rate)
+Unit, Algorithm, Anti-Manipulation & End-to-End Integration Tests.
+======================================================================

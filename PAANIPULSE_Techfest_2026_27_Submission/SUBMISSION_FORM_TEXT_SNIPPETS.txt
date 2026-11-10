@@ -59,3 +59,4 @@ Empowers Indian households, apartment societies (RWAs), and chawl committees to 
 3. Explainable Disruption Early-Warning: Statistically detects >=50% drops below baseline without hallucinating official outages.
 4. Privacy-by-Design: Centroid-level ward mapping with zero private address storage.
 ======================================================================
+
