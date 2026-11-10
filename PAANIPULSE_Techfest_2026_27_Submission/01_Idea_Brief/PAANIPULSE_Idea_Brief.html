@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PAANIPULSE — Idea Brief (Techfest 2026–27 Campus to Cloud Hackathon)</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #0f172a; max-width: 850px; margin: 40px auto; padding: 0 24px; background: #fff; }
+    h1 { color: #0284c7; font-size: 28px; margin-bottom: 4px; }
+    .subtitle { color: #64748b; font-size: 14px; margin-bottom: 24px; font-weight: 500; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; }
+    h2 { color: #0f172a; font-size: 18px; margin-top: 24px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; }
+    h3 { font-size: 14px; color: #0369a1; margin-top: 16px; }
+    p, li { font-size: 13px; color: #334155; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 12px; }
+    th, td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+    th { background: #f8fafc; font-weight: 600; color: #0f172a; }
+    .badge { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 12px; }
+    @media print { body { margin: 20px; max-width: 100%; } .no-print { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="no-print" style="text-align: right; margin-bottom: 16px;">
+    <button onclick="window.print()" style="background: #0284c7; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 12px;">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <h1>PAANIPULSE (पानीय पल्स)</h1>
+  <div class="subtitle">
+    India's Community-Powered Water Intelligence & Early Disruption Detection Network<br>
+    <strong>Competition:</strong> Techfest 2026–27 Campus to Cloud Hackathon sponsored by AWS | <strong>Round 1 Idea Brief</strong>
+  </div>
+
+  <div class="box">
+    <strong>Tagline:</strong> <em>“Know your neighbourhood's water situation before the tap runs dry.”</em><br>
+    <strong>Core Technology:</strong> 100% Serverless AWS Architecture (Amazon API Gateway, AWS Lambda Python 3.12, Amazon DynamoDB, AWS Amplify)
+  </div>
+
+  <h2>1. Problem Statement & Indian Urban Context</h2>
+  <p>In Indian urban and peri-urban habitats, municipal water supply is intermittent, operating for only 45 minutes to 3 hours a day with fluctuating pressure. Over 350 million urban residents across cities like Mumbai, Pune, Bengaluru, and New Delhi rely on shared rooftop tanks and underground sumps. When taps fail to flow, residents face immediate anxiety: Is it an internal motor failure or a ward-wide pipe burst? Today, residents rely on scattered WhatsApp messages and unverified rumors.</p>
+
+  <h2>2. Proposed Solution</h2>
+  <p>PAANIPULSE transforms informal neighbourhood chatter into a structured, transparent civic water-intelligence platform. In under 15 seconds, residents log tap availability and pressure. PAANIPULSE aggregates these observations, compares them against a diurnal <strong>Neighbourhood Water Fingerprint</strong>, computes a transparent <strong>Community Signal Confidence</strong> rating, and detects <strong>Early Disruption Anomalies</strong>.</p>
+
+  <h2>3. Unique Differentiating Features</h2>
+  <ul>
+    <li><strong>Neighbourhood Water Fingerprint:</strong> Historical baseline by diurnal windows (Morning 6–10 AM, Midday 10 AM–4 PM, Evening 4–9 PM, Night 9 PM–6 AM). Cleanly flags when a baseline is still developing.</li>
+    <li><strong>Transparent Community Signal Confidence:</strong> Objective 100-point model based on reporter diversity (30 pts), recency decay (35 pts), and concordance agreement (35 pts).</li>
+    <li><strong>Explainable Disruption Early-Warning:</strong> Alerts residents when recent flow drops &ge; 50% below baseline with plain-language explanations. Never fabricates "official outage" claims.</li>
+    <li><strong>Locality Pulse Map:</strong> Privacy-preserving spatial explorer using municipal ward centroids (zero private home addresses stored).</li>
+    <li><strong>Evidence-Based Locality Report Card:</strong> Instant downloadable/printable audit card for RWAs and ward councillors.</li>
+    <li><strong>Anti-Manipulation Integrity Layer:</strong> Anonymous device token rate-limiting (max 3 reports / 15 mins), server-side timestamp validation, and XSS sanitization.</li>
+  </ul>
+
+  <h2>4. Cloud Architecture & Cost Assessment</h2>
+  <p>PAANIPULSE operates on a 100% serverless AWS architecture: Amazon API Gateway routes requests, AWS Lambda executes Python 3.12 models, Amazon DynamoDB stores records using composite partition and sort keys to avoid table scans, and AWS Amplify delivers the frontend globally. The entire architecture operates at <strong>$0.00/month</strong> under the AWS Free Tier.</p>
+
+  <h2>5. Expected Social Impact (Bharat Impact: 30%)</h2>
+  <p>Prevents panic and private tanker price gouging, protects residential motors from burning out when running dry, and provides verifiable evidence report cards for citizens to present to local water boards.</p>
+</body>
+</html>

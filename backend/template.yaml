@@ -1,0 +1,135 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  PAANIPULSE - India's Community-Powered Water Intelligence & Early Disruption Detection Network
+  Techfest 2026-27 Campus to Cloud Hackathon (AWS)
+
+Globals:
+  Function:
+    Timeout: 15
+    MemorySize: 256
+    Runtime: python3.12
+    Tracing: Active
+    Environment:
+      Variables:
+        DYNAMODB_TABLE: !Ref PaanipulseReportsTable
+        LOG_LEVEL: INFO
+
+Resources:
+  # 1. DynamoDB Table for Community Reports
+  PaanipulseReportsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: PaanipulseReports
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: localityId
+          AttributeType: S
+        - AttributeName: timestamp#reportId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: localityId
+          KeyType: HASH
+        - AttributeName: timestamp#reportId
+          KeyType: RANGE
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      Tags:
+        - Key: Project
+          Value: PaaniPulse
+        - Key: Hackathon
+          Value: Techfest-2026-AWS
+
+  # 2. Serverless HTTP API Gateway
+  PaanipulseHttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      CorsConfiguration:
+        AllowMethods:
+          - GET
+          - POST
+          - OPTIONS
+        AllowHeaders:
+          - Content-Type
+          - Authorization
+          - X-Requested-With
+          - X-Reporter-Token
+        AllowOrigins:
+          - "*"
+        MaxAge: 600
+
+  # 3. Core Lambda API Function
+  PaanipulseApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: lambda_function.lambda_handler
+      Description: Core API handler for PAANIPULSE community water intelligence network
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref PaanipulseReportsTable
+      Events:
+        HealthApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PaanipulseHttpApi
+            Path: /health
+            Method: GET
+        LocalitiesApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PaanipulseHttpApi
+            Path: /localities
+            Method: GET
+        SummaryApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PaanipulseHttpApi
+            Path: /summary
+            Method: GET
+        ReportsApiGet:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PaanipulseHttpApi
+            Path: /reports
+            Method: GET
+        ReportsApiPost:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PaanipulseHttpApi
+            Path: /reports
+            Method: POST
+        FingerprintApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PaanipulseHttpApi
+            Path: /fingerprint
+            Method: GET
+        AlertsApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PaanipulseHttpApi
+            Path: /alerts
+            Method: GET
+        ReportCardApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PaanipulseHttpApi
+            Path: /report-card
+            Method: GET
+        AdminModerateApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PaanipulseHttpApi
+            Path: /admin/moderate
+            Method: POST
+
+Outputs:
+  HttpApiUrl:
+    Description: "Public API Gateway URL for PAANIPULSE Backend"
+    Value: !Sub "https://${PaanipulseHttpApi}.execute-api.${AWS::Region}.amazonaws.com"
+    Export:
+      Name: PaanipulseApiEndpoint
+  DynamoDBTableName:
+    Description: "DynamoDB Table Name"
+    Value: !Ref PaanipulseReportsTable

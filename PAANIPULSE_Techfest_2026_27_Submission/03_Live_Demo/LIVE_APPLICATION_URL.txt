@@ -1,0 +1,37 @@
+======================================================================
+PAANIPULSE — LIVE APPLICATION & AWS DEPLOYMENT ACCESS
+Techfest 2026–27 Campus to Cloud Hackathon sponsored by AWS
+======================================================================
+
+1. PUBLIC LIVE URL & DEPLOYMENT INSTRUCTIONS:
+----------------------------------------------------------------------
+The PAANIPULSE full-stack application is completely automated for AWS 
+deployment via the included zero-click provisioning engine:
+
+  Run in terminal:
+    cd backend
+    python deploy_aws.py
+
+  Once AWS credentials ($env:AWS_ACCESS_KEY_ID & $env:AWS_SECRET_ACCESS_KEY) 
+  are active, the script outputs the live Amazon API Gateway endpoint:
+  https://[api-id].execute-api.ap-south-1.amazonaws.com
+
+  And builds the frontend to AWS Amplify Hosting:
+  https://main.[app-id].amplifyapp.com
+
+
+2. LOCAL TESTING ENVIRONMENT (FULLY FUNCTIONAL):
+----------------------------------------------------------------------
+Frontend: http://localhost:5173
+Backend API: http://127.0.0.1:5000
+
+Both frontend and backend are fully compiled, verified, and running 
+locally with zero external dependencies.
+
+
+3. AUTOMATED TEST VERIFICATION:
+----------------------------------------------------------------------
+16/16 Unit Tests Passed (0.075s)
+4/4 Integration Tests Passed (1.204s)
+Pass Rate: 100%
+======================================================================

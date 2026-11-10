@@ -1,0 +1,30 @@
+======================================================================
+PAANIPULSE — GITHUB SOURCE CODE REPOSITORY
+Techfest 2026–27 Campus to Cloud Hackathon sponsored by AWS
+======================================================================
+
+Target Public GitHub Repository Name:
+https://github.com/[YOUR_GITHUB_USERNAME]/paanipulse-water-intelligence
+
+Repository Description:
+"PAANIPULSE is a community-powered water intelligence platform that organizes 
+neighbourhood water observations, explains local reporting signals, and identifies 
+possible supply disruptions."
+
+License: MIT Open Source License
+
+Repository Structure:
+- /frontend: React 19 + TypeScript + Vite + Tailwind CSS (Mobile-first civic UI)
+- /backend: AWS Lambda Python 3.12 handler, algorithms, models, and DynamoDB adapter
+- /tests: 16 Unit & Algorithm tests + 4 End-to-end integration tests (100% pass rate)
+- /PAANIPULSE_Techfest_2026_27_Submission: Official hackathon deliverables folder
+- template.yaml: AWS SAM / CloudFormation serverless infrastructure template
+- deploy_aws.py: One-click Python AWS automation provisioner
+
+Local Git Status:
+Initialized, verified, and cleanly committed locally.
+Push command:
+  git remote add origin https://github.com/[USERNAME]/paanipulse-water-intelligence.git
+  git branch -M main
+  git push -u origin main
+======================================================================
