@@ -38,3 +38,4 @@
 
 ### 3. Data Integrity & Ethical Disclosure
 All sample scenarios are cleanly segregated in code using the `is_demo_data: true` flag. Real community submissions overwrite and dynamically refine baseline calculations without altering underlying civic truthfulness.
+

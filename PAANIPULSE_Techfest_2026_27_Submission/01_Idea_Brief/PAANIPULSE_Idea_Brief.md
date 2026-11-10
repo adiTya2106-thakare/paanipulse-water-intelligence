@@ -136,7 +136,7 @@ Unlike traditional complaint portals that treat citizen submissions as passive f
 ---
 
 ### 17. Repository & Deliverables
+- **Live AWS Application URL:** https://main.d16h9tm50mzqg3.amplifyapp.com
 - **GitHub Repository:** https://github.com/adiTya2106-thakare/paanipulse-water-intelligence
-- **Live AWS Endpoint:** Amazon API Gateway + Lambda + DynamoDB serverless backend.
 - **Tested Test Suite:** 16 Unit & Algorithm tests + 4 End-to-end Integration tests (100% pass rate).
 
